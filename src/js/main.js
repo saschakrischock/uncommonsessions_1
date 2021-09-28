@@ -10,6 +10,7 @@ import InfoService from "./services/InfoService";
 import { getSubDir } from "./utils";
 import ConfigService from "./services/ConfigService";
 import { v4 as uuidv4 } from "uuid";
+import { doc } from "prettier";
 
 const pdfjsLib = require("pdfjs-dist");
 
@@ -19,6 +20,14 @@ const randomid = urlParams.get("randomid");
 
 
 $(document).ready(function(){      
+
+
+    document.querySelector('.about__trigger').addEventListener('click', function() { 
+        document.querySelector('.about__area').classList.toggle('active');
+
+     }, false);
+
+
     var colors = ["#CCCCCC","#333333","#990099"];
     var rand = Math.floor(Math.random()*colors.length); 
     $('body').css("background-color", colors[rand]);
@@ -31,57 +40,57 @@ if (randomNum === 1) {
     $('.pen-tool').addClass('tool-active');
     $('.pen-tool').addClass('active');
     $('.sizer').addClass('tool-active');
-    alert(randomNum)
+   // alert(randomNum)
 }
 
 if (randomNum === 2) {
     $('.line-tool').addClass('active-tool');
     $('.line-tool').addClass('active');
     $('.sizer').addClass('active-tool');
-    alert(randomNum)
+  // alert(randomNum)
 }
 
 if (randomNum === 3) {
     $('.rect-tool').addClass('active-tool');
     $('.rect-tool').addClass('active');
     $('.sizer').addClass('active-tool');
-    alert(randomNum)
+   // alert(randomNum)
 }
 
 if (randomNum === 4) {
     $('.circle-tool').addClass('active-tool');
     $('.circle-tool').addClass('active');
     $('.sizer').addClass('active-tool');
-    alert(randomNum)
+  //  alert(randomNum)
 }
 
 if (randomNum === 5) {
     $('.image-tool').addClass('active-tool');
     $('.image-tool').addClass('active');
-    alert(randomNum)
+  //  alert(randomNum)
 }
 
 if (randomNum === 6) {
     $('.cutter-tool').addClass('active-tool');
     $('.cutter-tool').addClass('active');
-    alert(randomNum)
+  //  alert(randomNum)
 }
 
 if (randomNum === 7) {
     $('.eraser-tool').addClass('active-tool');
     $('.eraser-tool').addClass('active');
-    alert(randomNum)
+  //  alert(randomNum)
 }
 
 if (randomNum === 8) {
     $('.time-keeper').addClass('active-tool');
-    alert(randomNum)
+  //  alert(randomNum)
 }
 
 if (randomNum === 9) {
     $('.text-tool').addClass('active-tool');
     $('.text-tool').addClass('active');
-    alert(randomNum)
+  //  alert(randomNum)
 }
 
 if (randomid) {

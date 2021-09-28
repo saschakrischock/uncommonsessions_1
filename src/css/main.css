@@ -24,6 +24,7 @@ body {
 #saveAsImageBtn {
     position: fixed;
     right: 1rem;
+    display: none;
 }
 
 #addImgToCanvasBtn, .addImgToCanvasBtn, #uploadJsonBtn {
@@ -53,9 +54,41 @@ display: block !important;
     display: none !important;
 }
 
+.about__trigger {
+    position: fixed;
+    right: 1rem;
+    z-index: 10000;
+    cursor: pointer;
+    background-color: #fff;
+    top: 1rem;
+    border-radius: 5px;
+    /* height: 45px; */
+    padding: 10px 20px 8px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.about__trigger:hover {
+    padding: 10px 20px 8px;
+}
+
+.about__area {
+    padding: 1rem;
+    z-index: 1000;
+    position: fixed;
+    background-color: #fff;
+    font-size: 1.2rem;
+    transform: translateY(-100vh);
+    transition: all 0.3s ease-in-out;
+}
+
+.about__area.active {
+    transform: translateY(0);
+}
+
 .btn-group button {
     background: transparent;
-    border-radius: 30px;
+    border-radius: 5px;
     font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica;
     margin: -1px;
     /* Green border */
