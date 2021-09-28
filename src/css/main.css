@@ -2,19 +2,55 @@
     --selected-icon-bg-color: #dfdfdf;
 }
 
+
+
+
+
+
 body {
     position: relative;
     margin: 0px;
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     overflow: hidden;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica,
+    font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica,
         Arial, sans-serif;
 }
+
+.whiteboard-tool, .time-keeper, .sizer {
+    display: none;
+}
+
+#saveAsImageBtn {
+    position: fixed;
+    right: 1rem;
+}
+
+#addImgToCanvasBtn, .addImgToCanvasBtn, #uploadJsonBtn {
+    display: none;
+}
+
+#saveAsJSONBtn {
+    display: none !important;
+}
+
+#shareWhiteboardBtn {
+    display: none !important;
+}
+
+.tool-active, .active-tool {
+display: block !important;
+}
+
 
 #whiteboardContainer {
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
+}
+
+
+#whiteboardUnlockBtn, #displayWhiteboardInfoBtn, .minGroup, #whiteboardTrashBtn, .hide-tool {
+    display: none !important;
 }
 
 .btn-group button {
