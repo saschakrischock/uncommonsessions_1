@@ -2,7 +2,7 @@ version: "3.1"
 services:
   whiteboard:
     image: rofl256/whiteboard
-    restart: always
+    restart: never
     ports:
       - "8080:8080/tcp"
     command: --config=./config.default.yml
