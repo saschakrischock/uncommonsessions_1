@@ -14,6 +14,7 @@ import { doc } from "prettier";
 
 const pdfjsLib = require("pdfjs-dist");
 
+
 const urlParams = new URLSearchParams(window.location.search);
 let whiteboardId = urlParams.get("whiteboardid");
 const randomid = urlParams.get("randomid");
