@@ -26,6 +26,7 @@ body {
     pointer-events: none;
 }
 
+
 #saveAsImageBtn {
     position: fixed;
     right: 1rem;
