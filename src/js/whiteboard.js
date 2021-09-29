@@ -353,8 +353,8 @@ const whiteboard = {
                     `<div class="dragMe" style="position:absolute; left: ${left}px; top: ${top}px; width: ${width}px; border: 2px dotted gray; overflow: hidden; height: ${height}px;" cursor:move;">
                     <canvas style="cursor:move; position:absolute; top:0px; left:0px;" width="${width}" height="${height}"></canvas>
                     <div style="position:absolute; right:5px; top:3px;">
-                    <button draw="1" style="margin: 0px 0px; background: #03a9f4; padding: 5px; margin-top: 3px; color: white;" class="addToCanvasBtn btn btn-default">Drop</button>
-                    <button style="margin: 0px 0px; background: #03a9f4; padding: 5px; margin-top: 3px; color: white;" class="xCanvasBtn btn btn-default">x</button>
+                    <button draw="1" style="margin: 0px 0px; background: #000;font-family: 'UncommonS', 'HelveticaNeue-Light', 'Helvetica Neue', Calibri, Helvetica, Arial, sans-serif; padding: 5px; margin-top: 3px; color: white;" class="addToCanvasBtn btn btn-default">Drop</button>
+                    <button style="margin: 0px 0px; background: #000; padding: 5px; margin-top: 3px; color: white;    font-family: 'UncommonS', 'HelveticaNeue-Light', 'Helvetica Neue', Calibri, Helvetica, Arial, sans-serif;" class="xCanvasBtn btn btn-default">x</button>
                     </div>
                     </div>`
                 );

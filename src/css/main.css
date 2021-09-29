@@ -32,6 +32,10 @@ body {
     display: none;
 }
 
+#addImgToCanvasBtn {
+    background-color: #ddd;
+}
+
 #addImgToCanvasBtn, .addImgToCanvasBtn, #uploadJsonBtn {
     display: none;
 }
