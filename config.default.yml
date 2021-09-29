@@ -23,7 +23,7 @@ frontend:
     setReadOnly: false
 
     # should the whiteboard info be displayed by default -- boolean
-    displayInfo: false
+    displayInfo: true
 
   # Show the smallest screen indicator ? (with dotted lines) -- boolean
   showSmallestScreenIndicator: false
