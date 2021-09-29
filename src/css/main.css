@@ -73,17 +73,49 @@ display: block !important;
 }
 
 .about__area {
-    padding: 1rem;
     z-index: 1000;
     position: fixed;
+    padding: 1rem 1rem 1.5rem;
     background-color: #fff;
     font-size: 1.2rem;
-    transform: translateY(-100vh);
+    height: 100vh;
+    overflow-y: scroll;
+    transform: translateY(-100%);
     transition: all 0.3s ease-in-out;
 }
 
 .about__area.active {
     transform: translateY(0);
+}
+
+.init {
+    position: fixed;
+    width: 100vw;
+    font-size: 1.2rem;
+    top: 0vh;
+    border-radius: 5px;
+    margin-left: 0vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+    z-index: 10000;
+    overflow: hidden;
+    background-color: #ffbe9e;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.init.active {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.init p {
+    padding: 0 5rem;
 }
 
 .btn-group button {
