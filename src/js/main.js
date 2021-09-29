@@ -125,7 +125,7 @@ if (urlParams.get("whiteboardid") !== whiteboardId) {
     window.location.search = urlParams;
 }
 
-const myUsername = urlParams.get("username") || "unknown" + (Math.random() + "").substring(2, 6);
+const myUsername = urlParams.get("username") || "uncommmon" + (Math.random() + "").substring(2, 2);
 const accessToken = urlParams.get("accesstoken") || "";
 const copyfromwid = urlParams.get("copyfromwid") || "";
 

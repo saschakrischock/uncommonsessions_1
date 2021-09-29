@@ -21,6 +21,11 @@ body {
     display: none;
 }
 
+.sizer .activeToolIcon {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
 #saveAsImageBtn {
     position: fixed;
     right: 1rem;
@@ -191,7 +196,7 @@ button::-moz-focus-inner {
 /* Add a background color on hover */
 
 .btn-group button:hover {
-    background-color: #9a9a9a;
+    /*background-color: #9a9a9a;*/
 }
 
 button {
