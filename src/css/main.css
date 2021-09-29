@@ -255,6 +255,14 @@ button {
     cursor: pointer;
 }
 
+#whiteboardUndoBtn, #whiteboardRedoBtn {
+    background-color: #ddd;
+}
+
+#whiteboardRedoBtn { 
+    margin-left: 1rem;
+}
+
 #displayWhiteboardInfoBtn.active {
     background: var(--selected-icon-bg-color);
 }
@@ -263,6 +271,10 @@ button {
     position: absolute;
     bottom: 10px;
     right: 10px;
+}
+
+#whiteboardInfoContainer p {
+    margin: 0;
 }
 
 .displayNone {
