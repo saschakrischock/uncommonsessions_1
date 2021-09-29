@@ -82,13 +82,13 @@ display: block !important;
     width: 50vw;
     position: fixed;
     right: 0;
-    padding: 1rem 1rem 1.5rem;
+    padding: 2rem 1rem 1.5rem;
     background-color: #fff;
     font-size: 1.2rem;
     height: 100vh;
     overflow-y: scroll;
     transform: translateX(100%);
-    transition: all 0.3s ease-in-ou
+    transition: all 0.3s ease-in-out;
 }
 
 .about__area.active {
