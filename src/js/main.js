@@ -115,7 +115,7 @@ if (randomid) {
 }
 
 if (!whiteboardId) {
-    whiteboardId = "myNewWhiteboard";
+    whiteboardId = "main";
 }
 
 whiteboardId = unescape(encodeURIComponent(whiteboardId)).replace(/[^a-zA-Z0-9\-]/g, "");
@@ -125,7 +125,7 @@ if (urlParams.get("whiteboardid") !== whiteboardId) {
     window.location.search = urlParams;
 }
 
-const myUsername = urlParams.get("username") || "uncommmon" + (Math.random() + "").substring(2, 4);
+const myUsername = urlParams.get("username") || "uncommmon" + (Math.random() + "").substring(2, 6);
 const accessToken = urlParams.get("accesstoken") || "";
 const copyfromwid = urlParams.get("copyfromwid") || "";
 
