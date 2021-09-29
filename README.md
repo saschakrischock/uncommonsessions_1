@@ -1,10 +1,7 @@
 # Uncommonsessions 1
 
-Uncommonsessions is a neighbourhood for channeling a pluriverse design discourse. It engages with cross-educational models and operates at the intersection of design, open-source and politics. Hosting different channels rooted in a series of on/off line sessions, the collective infrastructure aims to connect alternative design practices facilitating the exchange of knowledge, resources and experiences. 
+Uncommonsessions is a neighbourhood for channeling a pluriverse design discourse. It engages with cross-educational models and operates at the intersection of design, open-source and politics. Hosting different channels rooted in a series of on/off line sessions, the collective infrastructure aims to connect alternative design practices facilitating the exchange of knowledge, resources and experiences.
 
-
-
-abc
 ## Source
 Uncommonsessions uses https://github.com/cracker0dks/whiteboard as it main source while adjusting it to a more collaborative approach
 
