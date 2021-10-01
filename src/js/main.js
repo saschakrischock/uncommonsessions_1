@@ -98,7 +98,8 @@ if (randomNum === 7) {
 }
 
 if (randomNum === 8) {
-    $('.time-keeper').addClass('active-tool');
+    $('.text-tool').addClass('active-tool');
+    $('.text-tool').addClass('active');
   //  alert(randomNum)
 }
 

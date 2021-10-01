@@ -151,7 +151,7 @@ display: block !important;
 
 @media (max-device-width: 1024px) {
     .btn-group button {
-        font-size: 3em;
+        font-size: 18px;
         height: 135px;
     }
 
@@ -162,7 +162,7 @@ display: block !important;
 
 @media (min-device-width: 1024px) {
     .btn-group button {
-        font-size: 1.2em;
+        font-size: 18px;
         height: 45px;
        
     }
