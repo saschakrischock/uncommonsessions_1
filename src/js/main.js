@@ -94,6 +94,7 @@ if (randomNum === 6) {
 if (randomNum === 7) {
     $('.eraser-tool').addClass('active-tool');
     $('.eraser-tool').addClass('active');
+    $('.sizer').addClass('active-tool');
   //  alert(randomNum)
 }
 
