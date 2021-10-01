@@ -48,7 +48,7 @@ body {
 }
 
 #addImgToCanvasBtn {
-    background-color: #ddd;
+    background-color: #fff;
 }
 
 #addImgToCanvasBtn, .addImgToCanvasBtn, #uploadJsonBtn {
@@ -72,6 +72,12 @@ display: block !important;
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 }
+
+#CV_TICKER {
+    font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica,
+        Arial, sans-serif;
+}
+
 
 
 #whiteboardUnlockBtn, #displayWhiteboardInfoBtn, .minGroup, #whiteboardTrashBtn, .hide-tool {
@@ -114,6 +120,15 @@ display: block !important;
 
 .about__area.active {
     transform: translateX(0);
+}
+
+iframe {
+    background-color: #fff;
+    left: 0 !important;
+}
+
+iframe:before {
+    content: 'Chat';
 }
 
 .init {
