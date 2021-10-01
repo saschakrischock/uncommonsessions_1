@@ -17,6 +17,20 @@ body {
         Arial, sans-serif;
 }
 
+.rooms {
+    width: 50%;
+}
+
+.rooms a {
+    background-color: #ddd;
+    color: #000;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
 .whiteboard-tool, .time-keeper, .sizer {
     display: none;
 }
@@ -119,7 +133,7 @@ display: block !important;
     z-index: 10000;
     overflow: hidden;
     background-color: #ffbe9e;
-    cursor: pointer;
+   /* cursor: pointer;*/
     transition: all 0.3s;
 }
 

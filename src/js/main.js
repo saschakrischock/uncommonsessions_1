@@ -24,12 +24,12 @@ const randomid = urlParams.get("randomid");
 $(document).ready(function(){      
 
 
-    if (localStorage.getItem("init_stored") === null) {
+  /*  if (localStorage.getItem("init_stored") === null) {
 
     }
     else {
         document.querySelector('.init').classList.add('active');
-    }
+    }*/
 
     document.querySelector('.about__trigger').addEventListener('click', function() { 
         document.querySelector('.about__area').classList.toggle('active');
@@ -37,13 +37,13 @@ $(document).ready(function(){
      }, false);
 
      document.querySelector('.init').addEventListener('click', function() { 
-        document.querySelector('.init').classList.add('active');
-        localStorage.setItem('init_stored', 'yes');
+       // document.querySelector('.init').classList.add('active');
+     //   localStorage.setItem('init_stored', 'yes');
 
      }, false);
 
 
-    var colors = ["#CCCCCC","#333333","#990099"];
+    var colors = ["#CCCCCC","#333333","#eff4e1"];
     var rand = Math.floor(Math.random()*colors.length); 
     $('body').css("background-color", colors[rand]);
   });
