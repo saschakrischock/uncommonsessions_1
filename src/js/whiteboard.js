@@ -936,8 +936,8 @@ const whiteboard = {
                 textboxBackgroundColor +
                 ';">' +
                 '<div contentEditable="true" spellcheck="false" class="textContent" style="outline: none; font-size:' +
-                fontsize +
-                "em; color:" +
+                '16' +
+                "px; color:" +
                 textcolor +
                 '; min-width:50px; min-height:50px"></div>' +
                 '<div title="remove textbox" class="removeIcon" style="position:absolute; cursor:pointer; top:-4px; right:2px;">x</div>' +

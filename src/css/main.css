@@ -249,7 +249,7 @@ button {
 }
 
 .whiteboard-tool.active:not(:disabled) {
-    background: var(--selected-icon-bg-color);
+    background: #fff;
 }
 
 #whiteboardThicknessSlider {
