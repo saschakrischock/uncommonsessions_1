@@ -79,6 +79,7 @@ if (randomNum === 4) {
   //  alert(randomNum)
 }
 
+
 if (randomNum === 5) {
     $('.image-tool').addClass('active-tool');
     $('.image-tool').addClass('active');
