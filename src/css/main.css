@@ -17,12 +17,29 @@ body {
         Arial, sans-serif;
 }
 
+.close-start {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.room__title {
+    left: 50%;
+    position: fixed;
+    transform: translateX(-50%);
+    font-weight: 700;
+    pointer-events: none;
+    font-size: 18px;
+    top: 1.5rem;
+}
+
 .rooms {
     width: 50%;
 }
 
 .rooms a {
-    background-color: #ddd;
+    background-color: #fff;
     color: #000;
     margin: 10px;
     border-radius: 5px;
@@ -235,6 +252,11 @@ button::-moz-focus-inner {
 
 .btn-group button:hover {
     /*background-color: #9a9a9a;*/
+}
+
+
+#toolbar {
+    position: fixed !important;
 }
 
 button {

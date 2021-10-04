@@ -21,7 +21,13 @@ let whiteboardId = urlParams.get("whiteboardid");
 const randomid = urlParams.get("randomid");
 
 
-$(document).ready(function(){      
+$(document).ready(function(){     
+    
+    
+    var url_string = window.location.href; //window.location.href
+var url = new URL(url_string);
+var c = url.searchParams.get("whiteboardid");
+$('.room__title').text(c);
 
 
   if (localStorage.getItem("init_stored") === null) {
