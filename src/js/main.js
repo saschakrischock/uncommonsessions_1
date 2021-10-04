@@ -43,7 +43,7 @@ $(document).ready(function(){
      }, false);
 
 
-    var colors = ["#CCCCCC","#333333","#eff4e1"];
+    var colors = ["#eff4e1","#eff4e1","#eff4e1"];
     var rand = Math.floor(Math.random()*colors.length); 
     $('body').css("background-color", colors[rand]);
   });
