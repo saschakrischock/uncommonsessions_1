@@ -107,14 +107,16 @@ if (randomNum === 7) {
 }
 
 if (randomNum === 8) {
-    $('.text-tool').addClass('active-tool');
-    $('.text-tool').addClass('active');
+    $('.eraser-tool').addClass('active-tool');
+    $('.eraser-tool').addClass('active');
+    $('.sizer').addClass('active-tool');
+    $('#whiteboardColorpicker').hide();
   //  alert(randomNum)
 }
 
 if (randomNum === 9) {
-    $('.text-tool').addClass('active-tool');
-    $('.text-tool').addClass('active');
+    $('.cutter-tool').addClass('active-tool');
+    $('.cutter-tool').addClass('active');
   //  alert(randomNum)
 }
 

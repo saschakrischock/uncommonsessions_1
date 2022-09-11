@@ -9,8 +9,8 @@
         <style>
             @font-face {
                 font-family: 'UncommonS';
-                src: url('images/UncommonS-Regular.woff2') format('woff2'),
-                    url('images/UncommonS-Regular.woff') format('woff');
+                src: url('../images/UncommonS-Regular.woff2') format('woff2'),
+                    url('../images/UncommonS-Regular.woff') format('woff');
                 font-weight: normal;
                 font-style: normal;
                 font-display: swap;
@@ -21,16 +21,185 @@
                 background-color: #ffcbaf !important;
             }
 
-            .peers {
+
+            .info__overlay {
+                position: fixed;
+                text-align: left;
+                height: 100vh;
+                overflow: scroll;
+                width: 100vw;
+                transition: all 0.3s ease-in-out;
+                top: 0;
+                transform: translateY(100vh);
+                padding: 3rem;
+                z-index: 100;
+                max-width: none;
+                font-size: 1.5rem;
+                left:0;
                 background-color: #fff;
-                padding: 1rem;
+              }
+              
+              .info__overlay p, .info__overlay h1,  .info__overlay h2 {
+                  font-size: 1.5rem;
+                  max-width: 50vw;
+                  margin-bottom: 1rem;
+                  
+                }
+              
+                .info__overlay.active {
+                  transform: translateY(0);
+                }
+              
+
+            .info {
+                position: fixed;
+                right: 1rem;
+                top: 1rem;
+                z-index: 300;
+                font-size: 3rem;
+                border-radius: 100%;
+                cursor: pointer;
+                background-color: #fff;
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            .info.active {
+                background-color:  #ffcbaf;
+            }
+
+            .btn-group button {
+                font-size: 3rem !important;
+                height: fit-content !important;
+                padding: 1rem 1rem 0.5rem !important;
+                border-radius: 3rem !important;
+            }
+                        
+
+            .home {
+                position: fixed;
+                left: 1rem;
+                bottom: 1rem;
+                font-size: 3rem;
+                z-index: 100;
+                padding: 0 3rem;
+                border-radius: 3rem;
+                cursor: pointer;
+                background-color: #fff;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            .sessions {
+                position: fixed;
+                right: 1rem;
+                bottom: 1rem;
+                font-size: 3rem;
+                z-index: 100;
+                padding: 0 3rem;
+                border-radius: 3rem;
+                cursor: pointer;
+                background-color: #fff;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            .info span {
+                position: absolute;
+                margin-top: 0.4rem;
+            
+            }
+
+            .info:hover, .home:hover, .sessions:hover {
+                scale: 1.05;
+                 background-color: transparent;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+
+            .whiteboard-tool.active:not(:disabled) {
+                background-color: #000 !important;
+                color: #fff !important;
+            }
+
+            .peers i {
+
+                color: red;
+
+            }
+
+            .room__title {
+                font-size: 3rem !important;
+                pointer-events: none;
+                font-weight: normal !important;
+            }
+
+            .sizer {
+                height: 3rem !important;
+            }
+
+
+            #toolbar {
+                display: flex;
+                align-items: center;
+            }
+
+
+            #whiteboardColorpicker {
+                border-radius: 100% !important;
+                width: 3rem !important;
+                top: 0 !important;
+                height: 3rem !important;
+                border: none !important;
+            }
+
+
+            /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#whiteboardThicknessSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #000; /* Green background */
+    border-radius: 100%;
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  #whiteboardThicknessSlider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 100%;
+    background: #000; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+            .peers {
+                font-size: 3rem;
+           
+                padding: 1rem 1rem 0.5rem;
                 /* width: 100vw; */
                 left: 50%;
                 transform: translateX(-50%);
                 position: fixed;
                 margin: 0 auto;
                 bottom: 1rem;
-                border-radius: 1rem;
+                border-radius: 3rem;
             
             }
         </style>
@@ -48,59 +217,220 @@
 
         <div class="room__title"></div>
 
-        <div class="about__trigger">
-            about
-        </div>
+        <a href="https://uncommonsessions.space/" class="home">Home</a>
+        <div class="info"><span>?</span></div>
+        <a href="https://canvas.uncommonsessions.space/start" class="sessions">Sessions</a>
+   
 
-        <div class="init">
-            <p>1# Uncommonsessions—On domestic paces and education<br>
-Tuesday 5 October<br>
-10am–5pm Belgium time<br>
-Situated in the library of Sint Lucas School of Art Antwerp</p>
-
-<p>This canvas is both an experiment and a prototype. Each participant has access to only one tool, restricting the individual interaction and accelerating the cooperative process aiming for a collaborative result.
-</p>
-
-<div class="close-start">close</div>
-
-<p>Choose a room or create a new one via the url</p>
-<div class="rooms">
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room1">Uncommon room 1</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room2">Uncommon room 2</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room3">Uncommon room 3</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room4">Uncommon room 4</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room5">Uncommon room 5</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room6">Uncommon room 6</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room7">Uncommon room 7</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room8">Uncommon room 8</a>
-</div>
-
-        </div>
-
-        <div class="about__area">
-            <p style="text-align: center;">1# Uncommonsessions — On domestic spaces and education<br>
-                Tuesday 5 October<br>
-                10am – 5pm Belgium Time<br>
-                Situated in the library of Sint Lucas School of Art Antwerp
-                </p>
-
-            <p>Hosted by <a target="_blanl" href="https://cargocollective.com/joudtoamah">Joud Toamah</a> and <a target="_blank" href="https://www.behance.net/kindaghannoum">Kinda Ghannoum</a> on mapping educational experiences in domestic environments. This ‘uncommonsession' is given in the context of Naively Radical Research Week, by SLARG (Sint Lucas Antwerpen Research Group) and Kunsthal Extra City. </p>
-
-<p>Uncommonsessions is a neighbourhood for channeling a pluriverse design discourse. A digital space designed and conceptualized by PING, rooted in the Disarming Design from Palestine network. It engages with cross-educational models and operates at the intersection of design, open-source and politics. 
-    Uncommonsessions collaborates with design schools to shape collective methods of mutual learning and exchange, developing context specific vocabularies, ideas and common projects. Over time we aim to explore and expand design practices for solidarity, social transformation and political action. 
-    </p>
-
-
-<p>Credits<br>
-    Concept by <a target="_blank" href="https://www.bureaudevet.be/about">Annelys de Vet</a><br>
-    Concept, design and Identity by PING (<a target="_blank" href="https://www.miquelhervas.com/">Miquel Hervas Gomez</a>, <a target="_blank" href="https://saschakrischock.com/">Sascha Krischock</a>, <a target="_blank" href="https://agustinawoodgate.com/">Agustina Woodgate</a>)<br>
-    Open source Compagnon Roman typeface by <a target="_blank" href="http://velvetyne.fr/authors/juliette-duhe/">Juliette Duhé</a> + <a target="_blank" href="http://velvetyne.fr/authors/lea-pradine/">Léa Pradine</a> via <a target="_blank" href="http://velvetyne.fr/">Velvetyne</a><br>
-    Repository <a target="_blank" href="https://github.com/saschakrischock/whiteboard-simple">here</a><br>
-    Supported by <a target="_blank" href="https://stimuleringsfonds.nl/en/">Stimuleringsfonds</a><br>
-        </div>
+ 
 
 
         <div id="whiteboardContainer"></div>
+
+        <div class="info__overlay">
+
+            <p>
+                <em>Uncommonsessions</em> is a neighborhood for channeling a pluriverse discourse. A digital space designed and conceptualized by PING with Nick Reilly, rooted in the Disarming Design from Palestine network. It engages with cross-educational models and operates at the intersection of design, tools, open-source and politics. <em>Uncommonsessions</em> collaborates with design schools to shape collective methods of mutual learning and exchange, developing context specific vocabularies, ideas and common projects. We aim to explore and expand design practices for solidarity, social transformation and political action.
+                </p>
+                <p>
+                Uncommonsessions is an experimental space for collaborative production
+                </p>
+                <p>
+                A session is hosted by selecting one of the three different channels: Image, Voice and Words.
+                </p>
+                <p>
+                Each channel presents a different format inviting participants to engage through a common tool in an uncommon way of using it. Because each one of them was designed with a restrictive function, collaboration becomes the only way of achieving a successful outcome.
+                </p>
+                <p>
+                A session is only active when at least one participant is present in it. To produce complete content and get it saved you need the others.
+                </p>
+                <p>
+                No content or data is recorded or archived, thus Eeach session is a moment in time,. aAn immediate temporary space. A dislocated and descentralited library.
+                </p>
+                <p>
+                The content between participants is being shared by using a temporary memory enabled by WebSockets. WebSocket is a computer communications protocol, providing full-duplex communication channels over a single connection.
+                </p>
+                <p>
+                The session will be saved only in the cache of the computer in use. If the cache is cleaned, the session will be lost.
+                </p>
+                <p>
+                The only way to permanently save the results of the session is by screenshots or external audio/image recording apps.
+                </p>
+                <h1><strong>Code of conduct</strong></h1>
+                
+                
+                <p>
+                <em>UncommonSessions</em> is a learning environment where possible futures, fearless collectivities and desired technologies can be experimented. 
+                </p>
+                <p>
+                We strive to create a safen environment for participants where complex topics can be shared and discussed. Our positioning is one of risk-taking and trial and error in which rigor and critique meet with humor, insecurity, tension, ambiguity and mistakes.
+                </p>
+                <p>
+                We use Free, Libre and Open Source software whenever possible.
+                </p>
+                <p>
+                <em>UncommonSessions</em> is a collective setting where people feel safe and comfortable to express themselves, learn and collaborate. We hope that everyone who participates in <em>UncommonSessions</em> is respectful and takes care of each other. In the interest of creating an inclusive environment, we do not tolerate sexism, racism, queer antagonism, ableism and other kinds of oppression. 
+                </p>
+                <h1><strong>Credits</strong></h1>
+                
+                
+                <p>
+                <strong>Conceived</strong>Concept by<a href="https://www.bureaudevet.be/about"> Annelys de Vet</a>
+                </p>
+                <p>
+                Concept, design and Identity by <a href="https://www.miquelhervas.com/">Miquel Hervas Gomez</a>,<a href="https://saschakrischock.com/"> Sascha Krischock</a>,<a href="https://agustinawoodgate.com/"> </a>Nick Reilly, <a href="https://agustinawoodgate.com/">Agustina Woodgatee</a>, 
+                </p>
+                <p>
+                Edited open source Compagnon Roman typeface by<a href="http://velvetyne.fr/authors/juliette-duhe/"> Juliette Duhé</a> +<a href="http://velvetyne.fr/authors/lea-pradine/"> Léa Pradine</a> via<a href="http://velvetyne.fr/"> Velvetyne</a>
+                </p>
+                <p>
+                Repository<a href="https://github.com/saschakrischock/whiteboard-simple"> here</a>
+                </p>
+                <p>
+                Supported by<a href="https://stimuleringsfonds.nl/en/"> Stimuleringsfonds</a>
+                </p>
+                <h1><strong>Enter Session name</strong></h1>
+                
+                
+                <p>
+                By assigning a name to the session a new url will be automatically created.
+                </p>
+                <p>
+                Participants with this url can access the session directly.
+                </p>
+                <p>
+                All active sessions 
+                </p>
+                <h1><strong>? Guidelines</strong></h1>
+                
+                
+                <p>
+                <strong>Draw</strong>
+                </p>
+                <p>
+                In this image channel participants areassigned <span style="text-decoration:underline;">only one</span> of the ten available tools. By restricting the interaction, participants are encouraged to collaborate to achieve a common outcome.
+                </p>
+                <p>
+                Participants are visible to each other by their computer cursor.
+                </p>
+                <p>
+                Available tools:
+                </p>
+                <p>
+                Pen (with changing Weight)
+                </p>
+                <p>
+                Circle (with changing Weight)
+                </p>
+                <p>
+                Rectangle (with changing Weight)
+                </p>
+                <p>
+                Line (with changing Weight)
+                </p>
+                <p>
+                Cut out tool (with deciding Area)
+                </p>
+                <p>
+                Eraser (with changing Weight)
+                </p>
+                <p>
+                Upload Image (jpg, pgn max 2mb)
+                </p>
+                <p>
+                Upload Pdf (max 2mb)
+                </p>
+                <p>
+                Undo Button
+                </p>
+                <p>
+                Redo Button
+                </p>
+                <p>
+                By refreshing the browser a new tool will be re-assigned.
+                </p>
+                <p>
+                No session is saved or archived in any database or server. In fact, this website is not using any database. The content between participants is being shared by using a temporary memory enabled by websockets. WebSocket is a computer communications protocol, providing full-duplex communication channels over a single connection.
+                </p>
+                <p>
+                The session will be saved only in the cache of the computer. If cache is refreshed, the temporary archive of the session will be lost.
+                </p>
+                <p>
+                The only way to permanently save the results of the session is by screenshots or external audio/image recording apps.captions.
+                </p>
+                <p>
+                <strong>Sound</strong>
+                </p>
+                <p>
+                In thethis sound channelboard one minute clips can be recorded. Participants are visible to each other by their computer cursor. A blinking cursor indicates a recording taking place. Multiple recordings can be happening at the same time.
+                </p>
+                <p>
+                Participants can choose a position on the screen for the sound clip to appear. 
+                </p>
+                <p>
+                By clicking the ComposePlay Button all clips get automatically organized chronologically by the time they were recorded, creating an unexpected composition. Press Play button to linearly play them all togheter.
+                </p>
+                <p>
+                A session is only active when at least one participant is present in it. 
+                </p>
+                <p>
+                No content or data is recorded or archived, thus each session is a moment in time. An immediate temporary space.
+                </p>
+                <p>
+                The content between participants is being shared by using a temporary memory enabled by websockets. WebSocket is a computer communications protocol, providing full-duplex communication channels over a single connection.
+                </p>
+                <p>
+                The session will be save only in the cache of the computer. If cache is refreshed, the temporary archive of the session will be lost.
+                </p>
+                <p>
+                The only way to permanently save the results of the session is by using a sound recording appsoftware ( like piezo, sunflower, blackhole, etc)
+                </p>
+                <p>
+                <strong>Text</strong>
+                </p>
+                <p>
+                In this text channelpage each participant gets assigned a position along a text block. Each participant can only write a maximum of 190 characters at once.
+                </p>
+                <p>
+                By pressing enter or when the maximum word count is met the participant is reassigned a new position in the text block, resulting in an unexpected collaborative writing excersise.
+                </p>
+                <p>
+                Participants are visible to each other by their computer cursor.
+                </p>
+                <p>
+                A session is only active when at least one participant is present in it. 
+                </p>
+                <p>
+                No content or data is recorded or archived, thus each session is a moment in time. An immediate temporary space.
+                </p>
+                <p>
+                The content between participants is being shared by using a temporary memory enabled by websockets. WebSocket is a computer communications protocol, providing full-duplex communication channels over a single connection.
+                </p>
+                <p>
+                The session will be saved only in the cache of the computer. If cache is refreshed, the temporary archive of the session will be lost.
+                </p>
+                <p>
+                The only way to permanently save the results of the session is by selecting the text and copy pasting it.screen captions.
+                </p>
+                <h1><strong>Past Workshops:</strong></h1>
+                
+                
+                <p>
+                1# Uncommonsessions — On domestic spaces and education
+                </p>
+                <p>
+                Tuesday 5 October, 2021
+                </p>
+                <p>
+                10am – 5pm Belgium Time
+                </p>
+                <p>
+                Situated in the library of Sint Lucas School of Art Antwerp
+                </p>
+                <p>
+                Hosted by<a href="https://cargocollective.com/joudtoamah"> Joud Toamah</a> and<a href="https://www.behance.net/kindaghannoum"> Kinda Ghannoum</a> on mapping educational experiences in domestic environments. This ‘uncommonsession' is given in the context of Naively Radical Research Week, by SLARG (Sint Lucas Antwerpen Research Group) and Kunsthal Extra City.
+                </p>
+        </div>
 
         <!---Toolbar -!-->
         <div id="toolbar" style="position: absolute; top: 10px; left: 10px">
@@ -364,7 +694,7 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
         </div>
 
         <div style="display: block !important" id="whiteboardInfoContainer">
-            <div class="peers">Peers <i id="connectedUsersCount">0</i></div>
+            <div class="peers"><i id="connectedUsersCount">0</i> active peers</div>
             <div style="display:none !important">
             <i id="smallestScreenResolution">Unknown</i>
              <i id="messageSentCount">0</i>
@@ -395,5 +725,19 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
                 ></p>
             </div>
         </div>
+
+        <script>
+
+            document.querySelector(".info").addEventListener("click", displayInfo);
+
+            function displayInfo() {
+                document.querySelector(".info__overlay").classList.toggle('active');
+                document.querySelector(".info").classList.toggle('active');
+            }
+
+
+
+
+        </script>
     </body>
 </html>
