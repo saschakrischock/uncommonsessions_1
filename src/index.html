@@ -15,9 +15,27 @@
                 font-style: normal;
                 font-display: swap;
             }
+
+
+            body {
+                background-color: #ffcbaf !important;
+            }
+
+            .peers {
+                background-color: #fff;
+                padding: 1rem;
+                /* width: 100vw; */
+                left: 50%;
+                transform: translateX(-50%);
+                position: fixed;
+                margin: 0 auto;
+                bottom: 1rem;
+                border-radius: 1rem;
+            
+            }
         </style>
     </head>
-    
+
 
 
 
@@ -25,7 +43,6 @@
     <body style="display: none">
 
 
-        <script id="cid0020000293990109731" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 450px;height: 300px;">{"handle":"uncommonsession","arch":"js","styles":{"a":"ff9900","c":"000000","d":"000000","f":0,"i":0,"k":"ff9900","l":"ff9900","m":"ff9900","p":"10","q":"ff9900","ab":false,"usricon":0,"pos":"br","cv":1,"cvfnt":"monospace, sans-serif","cvbg":"cc0000","cvbga":0,"cvfg":"000000","cvw":450,"cvh":28,"surl":0,"cnrs":"1","ticker":1,"fwtickm":1}}</script>
         <!---Whiteboard container -!-->
 
 
@@ -209,7 +226,7 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
                 <button tool="text" title="write text" type="button" class="whiteboard-tool text-tool">
                   Text
                 </button>
-                <button
+                <button style="display: none; !important";
                     tool="stickynote"
                     title="place a sticky note"
                     type="button"
@@ -347,10 +364,12 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
         </div>
 
         <div style="display: block !important" id="whiteboardInfoContainer">
-            <p>Connections <i id="connectedUsersCount">0</i></p>
-            <p style="display: none !important">Smallest screen resolution: <i id="smallestScreenResolution">Unknown.</i></p>
-            <p>sent to server <i id="messageSentCount">0</i></p>
-            <p>received from server <i id="messageReceivedCount">0</i></p>
+            <div class="peers">Peers <i id="connectedUsersCount">0</i></div>
+            <div style="display:none !important">
+            <i id="smallestScreenResolution">Unknown</i>
+             <i id="messageSentCount">0</i>
+           <i id="messageReceivedCount">0</i>
+           </div>
         </div>
 
         <div id="shareWhiteboardDialog" class="displayNone">
