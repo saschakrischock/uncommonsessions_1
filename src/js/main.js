@@ -104,13 +104,14 @@ if (randomNum === 7) {
 if (randomNum === 8) {
     $(".eraser-tool").addClass("active-tool");
     $(".eraser-tool").addClass("active");
+    $(".sizer").addClass("active-tool");
+    $("#whiteboardColorpicker").hide();
     //  alert(randomNum)
 }
 
 if (randomNum === 9) {
-    $(".pen-tool").addClass("tool-active");
-    $(".pen-tool").addClass("active");
-    $(".sizer").addClass("tool-active");
+    $(".cutter-tool").addClass("active-tool");
+    $(".cutter-tool").addClass("active");
     //  alert(randomNum)
 }
 
