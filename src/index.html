@@ -5,12 +5,11 @@
         <meta charset="utf-8" />
         <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
 
-
         <style>
             @font-face {
-                font-family: 'UncommonS';
-                src: url('images/UncommonS-Regular.woff2') format('woff2'),
-                    url('images/UncommonS-Regular.woff') format('woff');
+                font-family: "UncommonS";
+                src: url("../assets/images/UncommonS-Regular.woff2") format("woff2"),
+                    url("../assets/images/UncommonS-Regular.woff") format("woff");
                 font-weight: normal;
                 font-style: normal;
                 font-display: swap;
@@ -18,71 +17,24 @@
         </style>
     </head>
 
-
-
-
     <body style="display: none">
-
-
-        <script id="cid0020000293990109731" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 450px;height: 300px;">{"handle":"uncommonsession","arch":"js","styles":{"a":"ff9900","c":"000000","d":"000000","f":0,"i":0,"k":"ff9900","l":"ff9900","m":"ff9900","p":"10","q":"ff9900","ab":false,"usricon":0,"pos":"br","cv":1,"cvfnt":"monospace, sans-serif","cvbg":"cc0000","cvbga":0,"cvfg":"000000","cvw":450,"cvh":28,"surl":0,"cnrs":"1","ticker":1,"fwtickm":1}}</script>
         <!---Whiteboard container -!-->
-
 
         <div class="room__title"></div>
 
-        <div class="about__trigger">
-            about
-        </div>
-
-        <div class="init">
-            <p>1# Uncommonsessions—On domestic paces and education<br>
-Tuesday 5 October<br>
-10am–5pm Belgium time<br>
-Situated in the library of Sint Lucas School of Art Antwerp</p>
-
-<p>This canvas is both an experiment and a prototype. Each participant has access to only one tool, restricting the individual interaction and accelerating the cooperative process aiming for a collaborative result.
-</p>
-
-<div class="close-start">close</div>
-
-<p>Choose a room or create a new one via the url</p>
-<div class="rooms">
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room1">Uncommon room 1</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room2">Uncommon room 2</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room3">Uncommon room 3</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room4">Uncommon room 4</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room5">Uncommon room 5</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room6">Uncommon room 6</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room7">Uncommon room 7</a>
-<a target="_blank" href="https://uncommonsessions.space/?whiteboardid=room8">Uncommon room 8</a>
-</div>
-
-        </div>
-
-        <div class="about__area">
-            <p style="text-align: center;">1# Uncommonsessions — On domestic spaces and education<br>
-                Tuesday 5 October<br>
-                10am – 5pm Belgium Time<br>
-                Situated in the library of Sint Lucas School of Art Antwerp
-                </p>
-
-            <p>Hosted by <a target="_blanl" href="https://cargocollective.com/joudtoamah">Joud Toamah</a> and <a target="_blank" href="https://www.behance.net/kindaghannoum">Kinda Ghannoum</a> on mapping educational experiences in domestic environments. This ‘uncommonsession' is given in the context of Naively Radical Research Week, by SLARG (Sint Lucas Antwerpen Research Group) and Kunsthal Extra City. </p>
-
-<p>Uncommonsessions is a neighbourhood for channeling a pluriverse design discourse. A digital space designed and conceptualized by PING, rooted in the Disarming Design from Palestine network. It engages with cross-educational models and operates at the intersection of design, open-source and politics. 
-    Uncommonsessions collaborates with design schools to shape collective methods of mutual learning and exchange, developing context specific vocabularies, ideas and common projects. Over time we aim to explore and expand design practices for solidarity, social transformation and political action. 
-    </p>
-
-
-<p>Credits<br>
-    Concept by <a target="_blank" href="https://www.bureaudevet.be/about">Annelys de Vet</a><br>
-    Concept, design and Identity by PING (<a target="_blank" href="https://www.miquelhervas.com/">Miquel Hervas Gomez</a>, <a target="_blank" href="https://saschakrischock.com/">Sascha Krischock</a>, <a target="_blank" href="https://agustinawoodgate.com/">Agustina Woodgate</a>)<br>
-    Open source Compagnon Roman typeface by <a target="_blank" href="http://velvetyne.fr/authors/juliette-duhe/">Juliette Duhé</a> + <a target="_blank" href="http://velvetyne.fr/authors/lea-pradine/">Léa Pradine</a> via <a target="_blank" href="http://velvetyne.fr/">Velvetyne</a><br>
-    Repository <a target="_blank" href="https://github.com/saschakrischock/whiteboard-simple">here</a><br>
-    Supported by <a target="_blank" href="https://stimuleringsfonds.nl/en/">Stimuleringsfonds</a><br>
-        </div>
-
+        <a href="https://uncommonsessions.space/" class="home">Invite</a>
+        <div class="info"><span>?</span></div>
+        <a href="https://uncommonsessions.space/sessions" class="sessions">Home</a>
 
         <div id="whiteboardContainer"></div>
+
+        <div class="info__overlay">
+            <p>
+                Uncommon Sessions is an experimental space for collaborative production. Composed of
+                three different channels, each one presents a different format inviting participants
+                to engage through a common tool in an uncommon way.
+            </p>
+        </div>
 
         <!---Toolbar -!-->
         <div id="toolbar" style="position: absolute; top: 10px; left: 10px">
@@ -121,7 +73,12 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
             </div>
 
             <div class="btn-group whiteboard-edit-group">
-                <button tool="mouse" title="Take the mouse" type="button" class="whiteboard-tool hide-tool">
+                <button
+                    tool="mouse"
+                    title="Take the mouse"
+                    type="button"
+                    class="whiteboard-tool hide-tool"
+                >
                     <i class="fa fa-mouse-pointer"></i>
                 </button>
                 <button
@@ -131,7 +88,7 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
                     type="button"
                     class="whiteboard-tool cutter-tool"
                 >
-                Cutter
+                    Cutter
                 </button>
                 <button
                     tool="pen"
@@ -139,7 +96,7 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
                     type="button"
                     class="whiteboard-tool pen-tool"
                 >
-                   Pen
+                    Pen
                 </button>
                 <button
                     style="padding-bottom: 8px; padding-top: 6px"
@@ -148,16 +105,31 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
                     type="button"
                     class="whiteboard-tool line-tool"
                 >
-                   Line
+                    Line
                 </button>
-                <button tool="rect" title="draw a rectangle" type="button" class="whiteboard-tool rect-tool">
+                <button
+                    tool="rect"
+                    title="draw a rectangle"
+                    type="button"
+                    class="whiteboard-tool rect-tool"
+                >
                     Rectangle
                 </button>
-                <button tool="circle" title="draw a circle" type="button" class="whiteboard-tool circle-tool">
-                   Circle
+                <button
+                    tool="circle"
+                    title="draw a circle"
+                    type="button"
+                    class="whiteboard-tool circle-tool"
+                >
+                    Circle
                 </button>
-                <button tool="eraser" title="take the eraser" type="button" class="whiteboard-tool eraser-tool">
-                  Eraser
+                <button
+                    tool="eraser"
+                    title="take the eraser"
+                    type="button"
+                    class="whiteboard-tool eraser-tool"
+                >
+                    Eraser
                 </button>
             </div>
 
@@ -205,10 +177,17 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
             </div>
 
             <div class="btn-group whiteboard-edit-group">
-                <button tool="text" title="write text" type="button" class="whiteboard-tool text-tool">
-                  Text
+                <button
+                    tool="text"
+                    title="write text"
+                    type="button"
+                    class="whiteboard-tool text-tool"
+                >
+                    Text
                 </button>
                 <button
+                    style="display: none; !important"
+                    ;
                     tool="stickynote"
                     title="place a sticky note"
                     type="button"
@@ -238,8 +217,13 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
             </div>
 
             <div class="btn-group whiteboard-edit-group">
-                <button class="image-tool" id="addImgToCanvasBtn" title="Upload Image to whiteboard" type="button">
-                   Image & Pdf
+                <button
+                    class="image-tool"
+                    id="addImgToCanvasBtn"
+                    title="Upload Image to whiteboard"
+                    type="button"
+                >
+                    Image & Pdf
                 </button>
 
                 <button
@@ -346,10 +330,12 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
         </div>
 
         <div style="display: block !important" id="whiteboardInfoContainer">
-            <p>Connections <i id="connectedUsersCount">0</i></p>
-            <p style="display: none !important">Smallest screen resolution: <i id="smallestScreenResolution">Unknown.</i></p>
-            <p>sent to server <i id="messageSentCount">0</i></p>
-            <p>received from server <i id="messageReceivedCount">0</i></p>
+            <div class="peers"><i id="connectedUsersCount">0</i> active peers</div>
+            <div style="display: none !important">
+                <i id="smallestScreenResolution">Unknown</i>
+                <i id="messageSentCount">0</i>
+                <i id="messageReceivedCount">0</i>
+            </div>
         </div>
 
         <div id="shareWhiteboardDialog" class="displayNone">
@@ -375,5 +361,14 @@ Situated in the library of Sint Lucas School of Art Antwerp</p>
                 ></p>
             </div>
         </div>
+
+        <script>
+            document.querySelector(".info").addEventListener("click", displayInfo);
+
+            function displayInfo() {
+                document.querySelector(".info__overlay").classList.toggle("active");
+                document.querySelector(".info").classList.toggle("active");
+            }
+        </script>
     </body>
 </html>

@@ -1,11 +1,194 @@
 :root {
+    font-size: 16px;
     --selected-icon-bg-color: #dfdfdf;
 }
 
+body {
+    font-family: "UncommonS";
+    background-color: #ffcbaf !important;
+}
 
+.info__overlay {
+    position: fixed;
+    text-align: left;
+    height: 100vh;
+    overflow: scroll;
+    width: 100vw;
+    transition: all 0.3s ease-in-out;
+    top: 0;
+    transform: translateY(100vh);
+    padding: 1rem;
+    z-index: 100;
+    max-width: none;
+    font-size: 1.5rem;
+    left: 0;
+    background-color: #fff;
+}
 
+.info__overlay p,
+.info__overlay h1,
+.info__overlay h2 {
+    font-size: 1.5rem;
+    max-width: 50vw;
+    margin-bottom: 1rem;
+}
 
+.info__overlay.active {
+    transform: translateY(0);
+}
 
+.info {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 300;
+    font-size: 1.4rem;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.info.active {
+    background-color: #ffcbaf;
+}
+
+.btn-group button {
+    font-size: 1.4rem !important;
+    height: fit-content !important;
+    padding: 0.8rem 1rem 0.6rem !important;
+    line-height: 1.2rem !important;
+    border-radius: 3rem !important;
+}
+
+.home {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    font-size: 1.4rem !important;
+    height: fit-content !important;
+    padding: 0.8rem 1rem 0.6rem !important;
+    line-height: 1.2rem !important;
+    border-radius: 3rem !important;
+    border-radius: 3rem;
+    cursor: pointer;
+    background-color: #fff;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.sessions {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 1.4rem !important;
+    height: fit-content !important;
+    padding: 0.8rem 1rem 0.6rem !important;
+    line-height: 1.2rem !important;
+    border-radius: 3rem !important;
+    z-index: 100;
+    padding: 1rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.info span {
+    position: absolute;
+    margin-top: 0.4rem;
+}
+
+.info:hover,
+.home:hover,
+.sessions:hover {
+    scale: 1.05;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.whiteboard-tool.active:not(:disabled) {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.peers i {
+    font-style: normal !important;
+    color: red;
+}
+
+.room__title {
+    font-size: 1.4rem !important;
+    pointer-events: none;
+    font-weight: normal !important;
+}
+
+.sizer {
+    height: 3rem !important;
+}
+
+#toolbar {
+    display: flex;
+    align-items: center;
+    top: 0.8rem !important;
+    left: 1rem !important;
+}
+
+#whiteboardColorpicker {
+    border-radius: 100% !important;
+    width: 2rem !important;
+    top: 0.5rem !important;
+    height: 2rem !important;
+    border: none !important;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#whiteboardThicknessSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #000; /* Green background */
+    border-radius: 100%;
+    cursor: pointer; /* Cursor on hover */
+}
+
+#whiteboardThicknessSlider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 100%;
+    background: #000; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.peers {
+    font-size: 1.4rem;
+
+    padding: 0;
+    /* width: 100vw; */
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    margin: 0 auto;
+    bottom: 1rem;
+    border-radius: 3rem;
+}
 
 body {
     position: relative;
@@ -13,8 +196,8 @@ body {
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     overflow: hidden;
-    font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica,
-        Arial, sans-serif;
+    font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial,
+        sans-serif;
 }
 
 .close-start {
@@ -30,7 +213,7 @@ body {
     transform: translateX(-50%);
     font-weight: 700;
     pointer-events: none;
-    font-size: 18px;
+    font-size: 1.2rem;
     top: 1.5rem;
 }
 
@@ -44,11 +227,13 @@ body {
     margin: 10px;
     border-radius: 5px;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 1rem;
     display: inline-block;
 }
 
-.whiteboard-tool, .time-keeper, .sizer {
+.whiteboard-tool,
+.time-keeper,
+.sizer {
     display: none;
 }
 
@@ -56,7 +241,6 @@ body {
     opacity: 0 !important;
     pointer-events: none;
 }
-
 
 #saveAsImageBtn {
     position: fixed;
@@ -68,7 +252,9 @@ body {
     background-color: #fff;
 }
 
-#addImgToCanvasBtn, .addImgToCanvasBtn, #uploadJsonBtn {
+#addImgToCanvasBtn,
+.addImgToCanvasBtn,
+#uploadJsonBtn {
     display: none;
 }
 
@@ -80,10 +266,10 @@ body {
     display: none !important;
 }
 
-.tool-active, .active-tool {
-display: block !important;
+.tool-active,
+.active-tool {
+    display: block !important;
 }
-
 
 #whiteboardContainer {
     height: calc(var(--vh, 1vh) * 100);
@@ -91,13 +277,15 @@ display: block !important;
 }
 
 #CV_TICKER {
-    font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica,
-        Arial, sans-serif;
+    font-family: "UncommonS", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial,
+        sans-serif;
 }
 
-
-
-#whiteboardUnlockBtn, #displayWhiteboardInfoBtn, .minGroup, #whiteboardTrashBtn, .hide-tool {
+#whiteboardUnlockBtn,
+#displayWhiteboardInfoBtn,
+.minGroup,
+#whiteboardTrashBtn,
+.hide-tool {
     display: none !important;
 }
 
@@ -112,9 +300,7 @@ display: block !important;
     /* height: 45px; */
     padding: 10px 20px 8px;
     transition: all 0.3s ease-in-out;
-    
 }
-
 
 .about__trigger:hover {
     padding: 10px 20px 8px;
@@ -145,7 +331,7 @@ iframe {
 }
 
 iframe:before {
-    content: 'Chat';
+    content: "Chat";
 }
 
 .init {
@@ -165,7 +351,7 @@ iframe:before {
     z-index: 10000;
     overflow: hidden;
     background-color: #ffbe9e;
-   /* cursor: pointer;*/
+    /* cursor: pointer;*/
     transition: all 0.3s;
 }
 
@@ -210,7 +396,6 @@ iframe:before {
     .btn-group button {
         font-size: 18px;
         height: 45px;
-       
     }
 
     .minGroup {
@@ -254,19 +439,17 @@ button::-moz-focus-inner {
     /*background-color: #9a9a9a;*/
 }
 
-
 #toolbar {
     position: fixed !important;
 }
 
 button {
     outline-width: 0;
-    font-family: 'UncommonS';
+    font-family: "UncommonS";
     border: none;
 }
 
 .btn-group {
-    margin-left: 5px;
     margin-bottom: 5px;
     float: left;
     position: relative;
@@ -317,11 +500,12 @@ button {
     cursor: pointer;
 }
 
-#whiteboardUndoBtn, #whiteboardRedoBtn {
+#whiteboardUndoBtn,
+#whiteboardRedoBtn {
     background-color: #ddd;
 }
 
-#whiteboardRedoBtn { 
+#whiteboardRedoBtn {
     margin-left: 1rem;
 }
 

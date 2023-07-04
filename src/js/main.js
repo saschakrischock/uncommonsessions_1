@@ -14,108 +14,104 @@ import { doc } from "prettier";
 
 const pdfjsLib = require("pdfjs-dist");
 
-
-
 const urlParams = new URLSearchParams(window.location.search);
 let whiteboardId = urlParams.get("whiteboardid");
 const randomid = urlParams.get("randomid");
 
-
-$(document).ready(function(){     
-    
-    
+$(document).ready(function () {
     var url_string = window.location.href; //window.location.href
-var url = new URL(url_string);
-var c = url.searchParams.get("whiteboardid");
-$('.room__title').text(c);
+    var url = new URL(url_string);
+    var c = url.searchParams.get("whiteboardid");
+    $(".room__title").text(c);
 
-
-  if (localStorage.getItem("init_stored") === null) {
-
-    }
-    else {
-        document.querySelector('.init').classList.add('active');
+    if (localStorage.getItem("init_stored") === null) {
+    } else {
+        document.querySelector(".init").classList.add("active");
     }
 
-    document.querySelector('.about__trigger').addEventListener('click', function() { 
-        document.querySelector('.about__area').classList.toggle('active');
+    document.querySelector(".about__trigger").addEventListener(
+        "click",
+        function () {
+            document.querySelector(".about__area").classList.toggle("active");
+        },
+        false
+    );
 
-     }, false);
+    document.querySelector(".init").addEventListener(
+        "click",
+        function () {
+            document.querySelector(".init").classList.add("active");
+            localStorage.setItem("init_stored", "yes");
+        },
+        false
+    );
 
-     document.querySelector('.init').addEventListener('click', function() { 
-        document.querySelector('.init').classList.add('active');
-       localStorage.setItem('init_stored', 'yes');
+    var colors = ["#eff4e1", "#eff4e1", "#eff4e1"];
+    var rand = Math.floor(Math.random() * colors.length);
+    $("body").css("background-color", colors[rand]);
+});
 
-     }, false);
-
-
-    var colors = ["#eff4e1","#eff4e1","#eff4e1"];
-    var rand = Math.floor(Math.random()*colors.length); 
-    $('body').css("background-color", colors[rand]);
-  });
-
-
-var randomNum = Math.floor((Math.random() * 8) + 1);
+var randomNum = Math.floor(Math.random() * 8 + 1);
 
 if (randomNum === 1) {
-    $('.pen-tool').addClass('tool-active');
-    $('.pen-tool').addClass('active');
-    $('.sizer').addClass('tool-active');
-   // alert(randomNum)
+    $(".pen-tool").addClass("tool-active");
+    $(".pen-tool").addClass("active");
+    $(".sizer").addClass("tool-active");
+    // alert(randomNum)
 }
 
 if (randomNum === 2) {
-    $('.line-tool').addClass('active-tool');
-    $('.line-tool').addClass('active');
-    $('.sizer').addClass('active-tool');
-  // alert(randomNum)
+    $(".line-tool").addClass("active-tool");
+    $(".line-tool").addClass("active");
+    $(".sizer").addClass("active-tool");
+    // alert(randomNum)
 }
 
 if (randomNum === 3) {
-    $('.rect-tool').addClass('active-tool');
-    $('.rect-tool').addClass('active');
-    $('.sizer').addClass('active-tool');
-   // alert(randomNum)
+    $(".rect-tool").addClass("active-tool");
+    $(".rect-tool").addClass("active");
+    $(".sizer").addClass("active-tool");
+    // alert(randomNum)
 }
 
 if (randomNum === 4) {
-    $('.circle-tool').addClass('active-tool');
-    $('.circle-tool').addClass('active');
-    $('.sizer').addClass('active-tool');
-  //  alert(randomNum)
+    $(".circle-tool").addClass("active-tool");
+    $(".circle-tool").addClass("active");
+    $(".sizer").addClass("active-tool");
+    //  alert(randomNum)
 }
 
-
 if (randomNum === 5) {
-    $('.image-tool').addClass('active-tool');
-    $('.image-tool').addClass('active');
-  //  alert(randomNum)
+    $(".image-tool").addClass("active-tool");
+    $(".image-tool").addClass("active");
+    //  alert(randomNum)
 }
 
 if (randomNum === 6) {
-    $('.cutter-tool').addClass('active-tool');
-    $('.cutter-tool').addClass('active');
-  //  alert(randomNum)
+    $(".cutter-tool").addClass("active-tool");
+    $(".cutter-tool").addClass("active");
+    //  alert(randomNum)
 }
 
 if (randomNum === 7) {
-    $('.eraser-tool').addClass('active-tool');
-    $('.eraser-tool').addClass('active');
-    $('.sizer').addClass('active-tool');
-    $('#whiteboardColorpicker').hide();
-  //  alert(randomNum)
+    $(".eraser-tool").addClass("active-tool");
+    $(".eraser-tool").addClass("active");
+    $(".sizer").addClass("active-tool");
+    $("#whiteboardColorpicker").hide();
+    //  alert(randomNum)
 }
 
 if (randomNum === 8) {
-    $('.text-tool').addClass('active-tool');
-    $('.text-tool').addClass('active');
-  //  alert(randomNum)
+    $(".eraser-tool").addClass("active-tool");
+    $(".eraser-tool").addClass("active");
+    //  alert(randomNum)
 }
 
 if (randomNum === 9) {
-    $('.text-tool').addClass('active-tool');
-    $('.text-tool').addClass('active');
-  //  alert(randomNum)
+    $(".pen-tool").addClass("tool-active");
+    $(".pen-tool").addClass("active");
+    $(".sizer").addClass("tool-active");
+    //  alert(randomNum)
 }
 
 if (randomid) {
@@ -254,7 +250,6 @@ function initWhiteboard() {
             //Load the whiteboard
             whiteboardId: whiteboardId,
             username: btoa(encodeURIComponent(myUsername)),
-            backgroundGridUrl: "./images/" + ConfigService.backgroundGridImage,
             sendFunction: function (content) {
                 if (ReadOnlyService.readOnlyActive) return;
                 //ADD IN LATER THROUGH CONFIG
