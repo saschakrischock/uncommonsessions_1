@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Uncommon Session 1</title>
+        <title>Uncommon Sessions – Image</title>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+        <link rel="icon" type="image/vnd.microsoft.icon" href="image.png" />
 
         <style>
             @font-face {
@@ -22,18 +22,78 @@
 
         <div class="room__title"></div>
 
-        <a href="https://uncommonsessions.space/" class="home">Invite</a>
+        <div class="btn-invite"  class="home">Invite</div>
         <div class="info"><span>?</span></div>
         <a href="https://uncommonsessions.space/sessions" class="sessions">Home</a>
 
         <div id="whiteboardContainer"></div>
 
+        <div class="invite-overlay">To invite other users, all you need to do is share the curent URL to the person(s) you wish to join only. Note that any content recorded in this sessions before they arrived will not be accessible to them.
+
+            <div class="copy-url">Copy Url</div>
+        </div>
+
         <div class="info__overlay">
-            <p>
-                Uncommon Sessions is an experimental space for collaborative production. Composed of
-                three different channels, each one presents a different format inviting participants
-                to engage through a common tool in an uncommon way.
-            </p>
+            <p style="margin-top: 3rem;">
+                Image
+                </p>
+                Participants are assigned <span style="text-decoration:underline;">only one</span> of the ten available tools. 
+                </p>
+                <p>
+                restricting the interaction,encourages collaboration to achieve a common outcome.
+                </p>
+                <p>
+                Participants are visible to each other through their computer cursor.
+                </p>
+                <div class="align-center">
+                <p>
+                Available tools:
+                </p>
+                <p>
+                Pen 
+                </p>
+                <p>
+                Circle
+                </p>
+                <p>
+                Rectangle 
+                </p>
+                <p>
+                Line
+                </p>
+                <p>
+                Cut out 
+                </p>
+                <p>
+                Eraser
+                </p>
+                <p>
+                Upload Image (jpg, pgn max. 2mb)
+                </p>
+                <p>
+                Upload Pdf (max. 2mb)
+                </p>
+                <p>
+                Undo 
+                </p>
+                <p>
+                Redo 
+                </p>
+            </div>
+                <p>
+                By refreshing the browser a new tool will be re-assigned.
+                </p>
+                <p>
+                A session is only active when at least one participant is present in it but the outcome only makes sense when multiple participants interact. 
+                </p>
+                <p>
+                No session is saved or archived in any database or server. In fact, this website is not using any database. The content between participants is being shared by using a temporary memory enabled by websockets. WebSocket is a computer communications protocol, providing full-duplex communication channels over a single connection.
+                </p>
+                <p>
+                The session will be saved only in the cache of the computer. If cache is refreshed, the temporary archive of the session will be lost. The only way to permanently save the results of the session is by screenshots or external audio/image recording apps.captions.
+                </p>
+
+                <a class="read-more" href="https://uncommonsessions.space/">Read more</a>
         </div>
 
         <!---Toolbar -!-->
@@ -363,12 +423,50 @@
         </div>
 
         <script>
+
+            const invite = document.querySelector('.btn-invite');
+const overlayinvite = document.querySelector('.invite-overlay');
+
+invite.addEventListener('click', () => {
+  invite.classList.toggle('active');
+  overlayinvite.classList.toggle('active');
+});
+
+
             document.querySelector(".info").addEventListener("click", displayInfo);
 
             function displayInfo() {
                 document.querySelector(".info__overlay").classList.toggle("active");
                 document.querySelector(".info").classList.toggle("active");
             }
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var copyButton = document.querySelector('.copy-url');
+              
+                copyButton.addEventListener('click', function () {
+                    // Get the current URL
+                    var currentUrl = window.location.href;
+              
+                    // Create a temporary input element
+                    var tempInput = document.createElement('input');
+                    tempInput.value = currentUrl;
+                    document.body.appendChild(tempInput);
+              
+                    // Select the text in the input element
+                    tempInput.select();
+                    tempInput.setSelectionRange(0, 99999); // For mobile devices
+              
+                    // Copy the text to the clipboard
+                    document.execCommand('copy');
+              
+                    // Remove the temporary input element
+                    document.body.removeChild(tempInput);
+              
+                    // Show an alert
+                    alert('URL has been copied to your clipboard!');
+                });
+              });
         </script>
     </body>
 </html>

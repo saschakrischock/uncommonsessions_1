@@ -59,3 +59,7 @@ Many settings of this project can be set using a simple `yaml` file, to change s
 
 
 **_ MIT License _**
+
+best use with 
+nvm use 14
+& npm run start:dev
